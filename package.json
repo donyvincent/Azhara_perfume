@@ -1,0 +1,22 @@
+{
+  "name": "azhara-studio-demo",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Azhara concept site — React 19 + three.js + GSAP, cinematic 3D opening film",
+  "scripts": {
+    "build": "esbuild src/main.jsx --bundle --minify --format=iife --target=es2019 --jsx=automatic --define:process.env.NODE_ENV='\"production\"' --outfile=dist/app.js",
+    "watch": "npm run build -- --watch"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "three": "0.170.0",
+    "gsap": "^3.12.5"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}
