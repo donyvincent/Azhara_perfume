@@ -1,4 +1,4 @@
-/* Azhara Scent Concierge — standalone chatbot (no API key, no backend).
+/* Azhara Scent Bot — standalone chatbot (no API key, no backend).
    Reads products from assets/bot-products.json. Later this can point to /api/products. */
 (function () {
   "use strict";
@@ -55,11 +55,11 @@
   var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
 
   /* ---------- DOM ---------- */
-  var fab = el("button", "azb-fab", '<span class="azb-dot"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h6M10 3v3.2a5 5 0 0 0-3 4.6V19a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-8.2a5 5 0 0 0-3-4.6V3"/><path d="M7 13h10"/></svg><span class="azb-t">Scent Concierge</span>');
-  fab.setAttribute("aria-label", "Open the Azhara Scent Concierge chat");
+  var fab = el("button", "azb-fab", '<span class="azb-dot"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h6M10 3v3.2a5 5 0 0 0-3 4.6V19a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-8.2a5 5 0 0 0-3-4.6V3"/><path d="M7 13h10"/></svg><span class="azb-t">Scent Bot</span>');
+  fab.setAttribute("aria-label", "Open the Azhara Scent Bot chat");
   var win = el("div", "azb-win");
-  win.setAttribute("role", "dialog"); win.setAttribute("aria-label", "Azhara Scent Concierge");
-  win.innerHTML = '<div class="azb-hd"><div><b>Scent Concierge</b><small>Find your Azhara fragrance</small></div><button class="azb-x" aria-label="Close chat">&times;</button></div><div class="azb-log" aria-live="polite"></div><form class="azb-in"><input type="text" placeholder="Try “like Dior Sauvage” or “fresh for office”" aria-label="Message"><button type="submit" aria-label="Send">&#10148;</button></form>';
+  win.setAttribute("role", "dialog"); win.setAttribute("aria-label", "Azhara Scent Bot");
+  win.innerHTML = '<div class="azb-hd"><div><b>Scent Bot</b><small>Find your Azhara fragrance</small></div><button class="azb-x" aria-label="Close chat">&times;</button></div><div class="azb-log" aria-live="polite"></div><form class="azb-in"><input type="text" placeholder="Try “like Dior Sauvage” or “fresh for office”" aria-label="Message"><button type="submit" aria-label="Send">&#10148;</button></form>';
   var log = win.querySelector(".azb-log"), form = win.querySelector("form"), input = form.querySelector("input");
   function mount() { document.body.appendChild(fab); document.body.appendChild(win); }
   if (document.body) mount(); else document.addEventListener("DOMContentLoaded", mount);
@@ -123,7 +123,7 @@
     ]);
   }
   function greet() {
-    bot("Hello, I’m the Azhara Scent Concierge.\nI can find your perfect home fragrance, match a designer perfume you love, or help you pick a diffuser.");
+    bot("Hello, I’m the Azhara Scent Bot.\nI can find your perfect home fragrance, match a designer perfume you love, or help you pick a diffuser.");
     menu();
   }
   function more() { setTimeout(function () { chips([["Something else", function () { bot("What else can I help with?"); menu(); }], ["Talk to a person", human]]); }, 300); }
